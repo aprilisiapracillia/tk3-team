@@ -28,6 +28,7 @@ class User extends Authenticatable
         'tempat_lahir',
         'tgl_lahir',
         'username',
+        'password',
     ];
 
     /**
