@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,14 @@ Route::prefix('barang')->group(function () {
     Route::post('/',[ BarangController::class, 'save']);
     Route::delete('/{id}',[ BarangController::class, 'delete']);
     Route::get('/{id}',[ BarangController::class, 'getById']);
-    Route::get('/{filepath}',[ BarangController::class, 'getImageByFilepath']);
     Route::post('/{id}',[ BarangController::class, 'save']);
+});
+
+Route::prefix('pembelian')->group(function () {
+    Route::get('/',[ PembelianController::class, 'get']);
+    Route::post('/',[ PembelianController::class, 'save']);
+    Route::delete('/{id}',[ PembelianController::class, 'delete']);
+    Route::get('/{id}',[ PembelianController::class, 'getById']);
+    Route::post('/{id}',[ PembelianController::class, 'save']);
+    Route::put('/validasi/{id}',[ PembelianController::class, 'validasi']);
 });

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pembelian', function (Blueprint $table) {
             $table->id();
             $table->string('id_barang');
+            $table->integer('total');
             $table->boolean('is_validate')->default(0);
             $table->string('created_by');
             $table->timestamps();
